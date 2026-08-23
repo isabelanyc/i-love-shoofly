@@ -104,7 +104,7 @@ function render() {
   if (map) { map.remove(); map = null; markers = []; }
   app.innerHTML = routes[route]();
   document.querySelectorAll("nav a").forEach(link => link.toggleAttribute("aria-current", link.dataset.route === route));
-  document.title = route === "about" ? "I Love Shoofly" : `${route === "what" ? "What Is Shoofly?" : route[0].toUpperCase() + route.slice(1)} · I Love Shoofly`;
+  document.title = route === "about" ? "Shoofly Pie Guide: History, Styles & Places to Find It | I Love Shoofly" : `${route === "what" ? "What Is Shoofly?" : route[0].toUpperCase() + route.slice(1)} · I Love Shoofly`;
   if (route === "map") initMap();
   if (route === "contact") initContact();
   app.focus({preventScroll:true});
