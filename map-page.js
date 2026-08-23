@@ -126,6 +126,75 @@ function updateSpot() {
     <a class="button button-primary full" href="${spot.url}" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>`;
 }
 
+
+const DIRECTORY_PAGE_SIZE = 6;
+
+function initDirectoryPagination() {
+  const directory = document.querySelector(".location-directory");
+  const items = [...document.querySelectorAll(".location-grid > li")];
+  const controls = document.querySelector(".directory-pagination");
+  const status = document.querySelector(".pagination-status");
+
+  if (!directory || !items.length || !controls || !status) return;
+
+  const pageCount = Math.ceil(items.length / DIRECTORY_PAGE_SIZE);
+
+  function pageFromUrl() {
+    const page = Number(new URL(window.location.href).searchParams.get("page"));
+    return Number.isInteger(page) && page >= 1 && page <= pageCount ? page : 1;
+  }
+
+  function renderPage(page, { updateUrl = false, scroll = false } = {}) {
+    const safePage = Math.min(Math.max(page, 1), pageCount);
+    const start = (safePage - 1) * DIRECTORY_PAGE_SIZE;
+    const end = Math.min(start + DIRECTORY_PAGE_SIZE, items.length);
+
+    items.forEach((item, index) => {
+      item.hidden = index < start || index >= end;
+    });
+
+    status.textContent = `Showing ${start + 1}–${end} of ${items.length} stops`;
+
+    const numberedButtons = Array.from({ length: pageCount }, (_, index) => {
+      const pageNumber = index + 1;
+      const current = pageNumber === safePage;
+      return `<button type="button" data-page="${pageNumber}"${current ? ' class="active" aria-current="page"' : ""} aria-label="Page ${pageNumber}">${pageNumber}</button>`;
+    }).join("");
+
+    controls.innerHTML = `
+      <button type="button" data-page="${safePage - 1}"${safePage === 1 ? " disabled" : ""} aria-label="Previous page">← Previous</button>
+      <span class="pagination-pages">${numberedButtons}</span>
+      <button type="button" data-page="${safePage + 1}"${safePage === pageCount ? " disabled" : ""} aria-label="Next page">Next →</button>
+    `;
+
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (safePage === 1) {
+        url.searchParams.delete("page");
+      } else {
+        url.searchParams.set("page", String(safePage));
+      }
+      history.pushState({ directoryPage: safePage }, "", url);
+    }
+
+    if (scroll) {
+      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+      directory.scrollIntoView({ behavior, block: "start" });
+    }
+  }
+
+  controls.addEventListener("click", event => {
+    const button = event.target.closest("button[data-page]");
+    if (!button || button.disabled) return;
+    renderPage(Number(button.dataset.page), { updateUrl: true, scroll: true });
+  });
+
+  window.addEventListener("popstate", () => renderPage(pageFromUrl()));
+  renderPage(pageFromUrl());
+}
+
+initDirectoryPagination();
+
 loadSpots().then(initMap).catch(error => {
   console.error(error);
   document.querySelector("#map").innerHTML = '<p style="padding: 24px;">The interactive map could not load. Browse the complete directory below.</p>';
