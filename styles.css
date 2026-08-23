@@ -75,13 +75,13 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .survey-stat { margin: 2px 0 24px; padding: 14px 0; display: flex; align-items: center; gap: 16px; border-top: 1px solid rgba(255,250,240,.2); border-bottom: 1px solid rgba(255,250,240,.2); }
 .survey-stat strong { color: var(--butter); font-family: Georgia, serif; font-size: clamp(44px,5vw,72px); line-height: .8; letter-spacing: -.05em; }
 .survey-stat span { max-width: 90px; color: #fff5df; font-size: 10px; font-weight: 900; letter-spacing: .1em; line-height: 1.35; text-transform: uppercase; }
-.preference-copy > p:last-child { max-width: 600px; margin: 0; color: #dccbb5; font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
+.preference-summary { max-width: 600px; margin: 0; color: #dccbb5; font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
+.preference-source { max-width: 600px; margin: 20px 0 0; padding-top: 17px; color: #cbb9a3; border-top: 1px solid rgba(255,250,240,.2); font-size: 11px; line-height: 1.55; }
+.preference-source a { color: var(--butter); font-weight: 900; text-underline-offset: 3px; }
 .preference-block figure { min-width: 0; margin: 0; display: flex; flex-direction: column; background: #fff; }
 .preference-block img { width: 100%; height: clamp(520px,48vw,680px); display: block; object-fit: contain; }
 .preference-block figcaption { padding: 8px 12px; color: #e6d7c3; background: var(--molasses); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
 .preference-block figcaption a { color: #fff5df; font-weight: 900; text-underline-offset: 3px; }
-.inline-source { margin: 24px 0 0; padding: 15px 18px; color: var(--brown); background: var(--cream); border-left: 3px solid var(--butter); font-size: 11px; line-height: 1.5; }
-.inline-source a { font-weight: 800; text-underline-offset: 3px; }
 
 .map-page { padding: 22px clamp(20px,4vw,58px); background: var(--paper); }
 .map-shell { height: clamp(400px,calc(100vh - 260px),540px); min-height: 400px; display: grid; grid-template-columns: minmax(0,1fr) 310px; overflow: hidden; border: 1px solid var(--molasses); background: #e8ddbd; box-shadow: 10px 10px 0 rgba(197,122,22,.28); }
