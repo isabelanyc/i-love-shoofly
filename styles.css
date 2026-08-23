@@ -50,14 +50,13 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .what-intro .section-kicker { margin-bottom: 10px; }
 .what-intro .route-title { font-size: clamp(48px,6vw,92px); line-height: .9; }
 .what-intro > p { width: 100%; margin: 22px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(18px,1.7vw,23px); line-height: 1.55; }
-.pie-comparison { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,3vw,44px); }
-.comparison-vs { position: absolute; top: -22px; left: 50%; z-index: 2; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid var(--molasses); border-radius: 50%; color: var(--molasses); background: var(--butter); font-family: Georgia, serif; font-size: 17px; font-style: italic; font-weight: 700; transform: translateX(-50%); }
+.pie-comparison { position: relative; width: min(100%,1240px); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px,2.5vw,34px); }
 .comparison-card { min-width: 0; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--molasses); background: var(--cream); }
 .comparison-card figure { min-width: 0; margin: 0; display: flex; flex-direction: column; overflow: hidden; border-top: 4px solid var(--butter); background: var(--molasses); }
-.comparison-card img { width: 100%; height: clamp(190px,19vw,280px); display: block; object-fit: cover; }
+.comparison-card img { width: 100%; height: clamp(180px,17vw,240px); display: block; object-fit: cover; }
 .comparison-card figcaption { padding: 7px 10px; color: #e6d7c3; background: var(--molasses); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
 .comparison-card figcaption a { color: #fff5df; font-weight: 900; text-underline-offset: 3px; }
-.comparison-copy { padding: clamp(22px,2.6vw,36px); flex: 1 1 auto; display: flex; flex-direction: column; background: var(--cream); }
+.comparison-copy { padding: clamp(20px,2.2vw,30px); flex: 1 1 auto; display: flex; flex-direction: column; background: var(--cream); }
 .comparison-number { margin-bottom: 8px; color: var(--rust); font-size: 10px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .comparison-copy h2 { margin-bottom: 14px; font-size: clamp(36px,4vw,58px); line-height: .92; }
 .comparison-copy > p:not(.comparison-number) { max-width: 610px; color: var(--brown); font-family: Georgia, serif; font-size: clamp(15px,1.25vw,18px); line-height: 1.6; }
@@ -150,7 +149,7 @@ input:focus, textarea:focus { border-color: var(--ochre); box-shadow: 0 2px 0 va
 @media (max-width: 980px) {
   .about-grid { grid-template-columns: 1fr 1fr; }
   .about-grid aside { grid-column: 2; }
-  .comparison-card img { height: clamp(190px,28vw,260px); }
+  .comparison-card img { height: clamp(180px,25vw,230px); }
   .map-shell { height: auto; grid-template-columns: 1fr; }
   #map { height: 560px; }
   .spot-panel { border-top: 1px solid var(--molasses); border-left: 0; display: grid; grid-template-columns: 1fr 1fr; }
@@ -167,8 +166,7 @@ input:focus, textarea:focus { border-color: var(--ochre); box-shadow: 0 2px 0 va
   nav { width: 100%; gap: 12px 16px; padding: 4px 0 6px; flex-wrap: wrap; }
   nav a { font-size: 9px; }
   .about-grid, .timeline, .field-row, .pie-comparison, .preference-block, .history-notes { grid-template-columns: 1fr; }
-  .comparison-vs { display: none; }
-  .comparison-card img { height: clamp(190px,58vw,270px); }
+  .comparison-card img { height: clamp(180px,54vw,240px); }
   .preference-block img { height: min(135vw,620px); }
   .timeline .timeline-today { grid-column: auto; }
   .about-grid aside { grid-column: 1; }
