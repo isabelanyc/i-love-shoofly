@@ -123,10 +123,12 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .timeline { margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; list-style: none; }
 .timeline li { padding: 26px 0; display: grid; grid-template-columns: 72px 1fr; gap: 20px; border-top: 1px solid rgba(255,250,240,.22); }
 .timeline li:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,250,240,.22); }
-.timeline .timeline-today { grid-column: 1 / -1; border-bottom: 1px solid rgba(255,250,240,.22); }
+.timeline .timeline-wide { grid-column: 1 / -1; }
+.timeline .timeline-today { border-bottom: 1px solid rgba(255,250,240,.22); }
 .timeline > li > span { color: var(--butter); font-family: Georgia, serif; font-size: 23px; font-style: italic; }
 .timeline h3 { margin-bottom: 9px; color: #fff5df; font-family: Georgia, serif; font-size: 21px; }
 .timeline p { margin: 0; color: #ccbba7; line-height: 1.6; }
+.timeline a { color: var(--butter); font-weight: 900; text-underline-offset: 3px; }
 .history-notes { margin-top: clamp(50px,7vw,90px); display: grid; grid-template-columns: repeat(2,1fr); color: var(--molasses); background: #f0dca8; border-top: 1px solid var(--butter); border-left: 1px solid var(--butter); }
 .history-notes article { padding: clamp(24px,3vw,42px); border-right: 1px solid rgba(50,26,18,.32); border-bottom: 1px solid rgba(50,26,18,.32); }
 .history-notes h2 { margin: 10px 0 15px; color: var(--molasses); font-size: clamp(24px,2.4vw,35px); line-height: 1.05; }
@@ -175,7 +177,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--ochre); box-shad
   .about-grid, .timeline, .field-row, .pie-comparison, .preference-block, .history-notes { grid-template-columns: 1fr; }
   .comparison-card img { height: clamp(180px,54vw,240px); }
   .preference-block img { flex: none; height: min(135vw,620px); }
-  .timeline .timeline-today { grid-column: auto; }
+  .timeline .timeline-wide { grid-column: auto; }
   .about-grid aside { grid-column: 1; }
   #map { height: 500px; }
   .spot-panel { grid-template-columns: 1fr; }
