@@ -137,3 +137,77 @@
 @media (max-width: 560px) {
   .location-grid { grid-template-columns: 1fr; }
 }
+
+.directory-pagination-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.pagination-status {
+  margin: 0;
+  color: var(--brown);
+  font: 900 11px/1.2 "Trebuchet MS", sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.directory-pagination,
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.directory-pagination {
+  flex-wrap: wrap;
+}
+
+.directory-pagination button {
+  min-height: 40px;
+  padding: 9px 13px;
+  border: 1px solid var(--molasses);
+  color: var(--molasses);
+  background: var(--paper);
+  font: 900 10px/1 "Trebuchet MS", sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.directory-pagination button:hover:not(:disabled),
+.directory-pagination button:focus-visible,
+.directory-pagination button.active {
+  color: var(--paper);
+  background: var(--molasses);
+}
+
+.directory-pagination button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.directory-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: .38;
+}
+
+.pagination-pages button {
+  min-width: 40px;
+  padding-inline: 10px;
+}
+
+@media (max-width: 560px) {
+  .directory-pagination-shell {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .directory-pagination {
+    justify-content: space-between;
+  }
+}
+
