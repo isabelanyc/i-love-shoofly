@@ -74,7 +74,7 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .survey-stat span { max-width: 90px; color: #fff5df; font-size: 10px; font-weight: 900; letter-spacing: .1em; line-height: 1.35; text-transform: uppercase; }
 .preference-copy > p:last-child { max-width: 600px; margin: 0; color: #dccbb5; font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
 .preference-block figure { min-width: 0; margin: 0; display: flex; flex-direction: column; background: #fff; }
-.preference-block img { width: 100%; flex: 1 1 auto; display: block; object-fit: cover; }
+.preference-block img { width: 100%; height: clamp(520px,48vw,680px); display: block; object-fit: contain; }
 .preference-block figcaption { padding: 8px 12px; color: #e6d7c3; background: var(--molasses); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
 .preference-block figcaption a { color: #fff5df; font-weight: 900; text-underline-offset: 3px; }
 .inline-source { margin: 24px 0 0; padding: 15px 18px; color: var(--brown); background: var(--cream); border-left: 3px solid var(--butter); font-size: 11px; line-height: 1.5; }
@@ -169,6 +169,7 @@ input:focus, textarea:focus { border-color: var(--ochre); box-shadow: 0 2px 0 va
   .about-grid, .timeline, .field-row, .pie-comparison, .preference-block, .history-notes { grid-template-columns: 1fr; }
   .comparison-vs { display: none; }
   .comparison-card img { height: clamp(190px,58vw,270px); }
+  .preference-block img { height: min(135vw,620px); }
   .timeline .timeline-today { grid-column: auto; }
   .about-grid aside { grid-column: 1; }
   #map { height: 500px; }
