@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://isabelanyc.github.io/i-love-shoofly/sitemap.xml
