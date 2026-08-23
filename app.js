@@ -26,23 +26,21 @@ let selected = 5;
 let markers = [];
 
 const routes = {
-  home: () => `
-    <section class="page hero">
-      <div class="hero-copy">
-        <p class="eyebrow">A public field guide to molasses magic</p>
-        <h1>Find a slice.<br><em>Share the love.</em></h1>
-        <p class="hero-deck">Shoofly pie deserves a road trip of its own. This growing map collects the bakeries, markets, and counters keeping Pennsylvania Dutch pie tradition warm.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#/map">Explore ${spots.length} pie spots</a><a class="text-link" href="#/about">Meet the mission ↗</a></div>
-        <div class="hero-note">✦ Curated by one very devoted pie fan.</div>
-      </div>
-      <figure class="hero-photo"><img src="assets/shoofly-pie.jpg" alt="A homemade wet-bottom shoofly pie in a glass pie plate"><figcaption><span>Wet bottom</span><span>Molasses-forward</span><span>Best with coffee</span></figcaption></figure>
-    </section>`,
   about: () => `
     <section class="page about-page"><div class="about-grid">
       <div><p class="section-kicker">About the trail</p><h1 class="route-title">A love letter you can<br>navigate.</h1></div>
-      <div><p class="lead">This site started as a personal Google Maps list and a simple mission: make it easier for more people to meet shoofly pie.</p><p>Every spot began with a real tip or visit. Use the map to plan a detour, open the original listing for directions, and send in the places still missing.</p><a class="button button-primary" href="#/map">Open the map</a></div>
+      <div><p class="lead">This site started as a personal Google Maps list and a simple mission: make it easier for more people to meet shoofly pie.</p><p>Every spot began with a real tip or visit. Use the map to plan a detour, open the original listing for directions, and send in the places still missing.</p><div class="about-actions"><a class="button button-primary" href="#/map">Open the map</a><a class="text-link" href="#/what">What is shoofly? ↗</a></div></div>
       <aside><span class="big-number">${spots.length}</span><span>places on the trail<br>and counting</span></aside>
     </div></section>`,
+  what: () => `
+    <section class="page what-page">
+      <div class="what-photo"><img src="assets/shoofly-pie.jpg" alt="A homemade wet-bottom shoofly pie in a glass pie plate"></div>
+      <div class="what-copy"><p class="section-kicker">What is shoofly pie?</p><h1 class="route-title">Part pie.<br>Part crumb cake.<br><em>All molasses.</em></h1><p class="what-lead">A pastry shell holds a dark, warmly spiced molasses filling beneath a buttery brown-sugar crumb. As it bakes, those layers mingle into something between a tart, a cake, and a very good reason to make coffee.</p>
+        <div class="pie-anatomy"><div><span>01</span><h2>The filling</h2><p>Molasses, hot water, and baking soda create the signature deep sweetness and gentle tang.</p></div><div><span>02</span><h2>The crumb</h2><p>Flour, brown sugar, and fat make a streusel-like top that partly sinks into the filling.</p></div><div><span>03</span><h2>The crust</h2><p>A simple pastry shell turns a molasses crumb cake into a portable, sliceable pie.</p></div></div>
+        <div class="bottoms"><article><strong>Wet bottom</strong><p>Gooey and custard-like underneath, with a cakey crumb layer on top.</p></article><article><strong>Dry bottom</strong><p>Baked through for a more uniform, coffee-cake texture.</p></article></div>
+        <p class="inline-source">The two styles and classic construction are described by <a href="https://www.epicurious.com/recipes-menus/history-of-shoofly-pie" target="_blank" rel="noreferrer">Epicurious</a> and the <a href="https://www.wgpfoundation.org/historic-markers/shoofly-pie/" target="_blank" rel="noreferrer">Pomeroy Foundation</a>.</p>
+      </div>
+    </section>`,
   map: () => `
     <section class="page map-page">
       <div class="map-heading"><p class="section-kicker">The shoofly map · ${spots.length} places</p><h1 class="map-title">Your next slice is on here.</h1></div>
@@ -51,8 +49,14 @@ const routes = {
     </section>`,
   history: () => `
     <section class="page history-page">
-      <div class="history-intro"><p class="section-kicker">A sticky history</p><h1 class="route-title">From pantry staple to Pennsylvania icon.</h1><p>Shoofly pie sits between crumb cake and pie: molasses-rich filling under brown-sugar crumbs, held together by pastry and generations of practice.</p><div class="history-sources"><span>Read further</span><a href="https://www.wgpfoundation.org/historic-markers/shoofly-pie/" target="_blank" rel="noreferrer">Pomeroy Foundation ↗</a><a href="https://www.discoverlancaster.com/blog/shoo-fly-pie-lancaster-county/" target="_blank" rel="noreferrer">Discover Lancaster ↗</a></div></div>
-      <ol class="timeline"><li><span>1870s</span><div><h3>The baking-powder revolution</h3><p>New leavening methods enter Pennsylvania Dutch kitchens after the Civil War.</p></div></li><li><span>1876</span><div><h3>A centennial cake</h3><p>A crustless molasses cake becomes the pie&rsquo;s closest-known ancestor.</p></div></li><li><span>1880s</span><div><h3>The crust arrives</h3><p>The cake moves into pastry—tidier beside morning coffee. The “shoofly” name follows.</p></div></li><li><span>Today</span><div><h3>Wet or dry?</h3><p>Gooey molasses bottom or evenly cakey crumb: the trail welcomes both.</p></div></li></ol>
+      <div class="history-top"><div class="history-intro"><p class="section-kicker">A sticky history</p><h1 class="route-title">From pantry staple to Pennsylvania icon.</h1><p>The honest history of shoofly pie is part record and part food lore. What survives points to a practical, eggless molasses bake shaped by Pennsylvania Dutch kitchens in the late nineteenth century—not a recipe carried unchanged from Europe.</p></div>
+      <ol class="timeline"><li><span>1870s</span><div><h3>The baking-powder revolution</h3><p>New chemical leaveners changed Pennsylvania Dutch baking after the Civil War, making quick molasses cakes possible.</p></div></li><li><span>1876</span><div><h3>A centennial cake</h3><p>A crustless molasses “centennial cake” is the pie&rsquo;s best-documented predecessor.</p></div></li><li><span>1880s</span><div><h3>The pie takes shape</h3><p>The molasses crumb cake moves into pastry; the “shoofly” name develops around the same period.</p></div></li><li><span>By 1920</span><div><h3>A recognized tradition</h3><p>Historical-marker research documents it as an established Pennsylvania Dutch food tradition.</p></div></li></ol></div>
+      <div class="history-notes">
+        <article><p class="history-label">The community</p><h2>“Dutch” here means Pennsylvania German.</h2><p>The food belongs to the wider Pennsylvania Dutch tradition formed by German-speaking communities, including—but not limited to—Amish, Mennonite, and Moravian families. The <a href="https://philadelphiaencyclopedia.org/essays/dutch-netherlands/" target="_blank" rel="noreferrer">Encyclopedia of Greater Philadelphia</a> notes that Pennsylvania Dutch are German or <em>Deutsch</em> speakers, not immigrants from the Netherlands.</p></article>
+        <article><p class="history-label">A practical breakfast</p><h2>Molasses made sense when fruit and eggs did not.</h2><p>Flour, brown sugar, baking soda, and shelf-stable molasses suited winter pantries. Early versions required no eggs and were traditionally served at breakfast with coffee—a history summarized by the <a href="https://www.wgpfoundation.org/historic-markers/shoofly-pie/" target="_blank" rel="noreferrer">Pomeroy Foundation</a> and explored by <a href="https://www.epicurious.com/recipes-menus/history-of-shoofly-pie" target="_blank" rel="noreferrer">Epicurious</a>.</p></article>
+        <article><p class="history-label">The name</p><h2>A good story, not a settled answer.</h2><p>The familiar tale says bakers had to “shoo” flies from the sticky filling. Another theory points to a Shoofly-branded molasses. Food historian William Woys Weaver&rsquo;s research, cited by the <a href="https://www.wgpfoundation.org/historic-markers/shoofly-pie/" target="_blank" rel="noreferrer">Pomeroy historical marker</a>, concludes that the exact origin is undocumented—so the mystery remains part of the pie.</p></article>
+        <article><p class="history-label">A living tradition</p><h2>From morning fuel to regional calling card.</h2><p>What began as a thrifty breakfast bake became a symbol of Lancaster County and Pennsylvania Dutch foodways. Bakers still debate wet versus dry bottom, while family recipes keep changing across generations. A Lancaster bakery&rsquo;s account at <a href="https://www.shady-maple.com/history-of-shoofly-pie/" target="_blank" rel="noreferrer">Shady Maple</a> shows how both styles remain part of the tradition today.</p></article>
+      </div>
     </section>`,
   contact: () => `
     <section class="page contact-page">
@@ -63,7 +67,7 @@ const routes = {
 
 function currentRoute() {
   const key = location.hash.replace(/^#\/?/, "").split("/")[0];
-  return routes[key] ? key : "home";
+  return routes[key] ? key : "about";
 }
 
 function render() {
@@ -71,7 +75,7 @@ function render() {
   if (map) { map.remove(); map = null; markers = []; }
   app.innerHTML = routes[route]();
   document.querySelectorAll("nav a").forEach(link => link.toggleAttribute("aria-current", link.dataset.route === route));
-  document.title = route === "home" ? "Shoofly Pie Trail" : `${route[0].toUpperCase() + route.slice(1)} · Shoofly Pie Trail`;
+  document.title = route === "about" ? "Shoofly Pie Trail" : `${route === "what" ? "What Is Shoofly?" : route[0].toUpperCase() + route.slice(1)} · Shoofly Pie Trail`;
   if (route === "map") initMap();
   if (route === "contact") initContact();
   app.focus({preventScroll:true});
