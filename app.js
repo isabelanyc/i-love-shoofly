@@ -43,7 +43,7 @@ function parseCsv(text) {
 }
 
 async function loadSpots() {
-  const response = await fetch("/i-love-shoofly/spots.csv", {cache: "no-cache"});
+  const response = await fetch("/spots.csv", {cache: "no-cache"});
   if (!response.ok) throw new Error("Could not load spots.csv");
 
   const [headers, ...rows] = parseCsv(await response.text());
@@ -56,7 +56,7 @@ const routes = {
   about: () => `
     <section class="page about-page"><div class="about-grid">
       <div><h1 class="route-title">I love<br>shoofly.</h1></div>
-      <div><p class="lead">This is an <a href="https://groups.etown.edu/amishstudies/frequently-asked-questions/" target="_blank" rel="noreferrer" title="Amish term for a non-Amish person">Englisher&rsquo;s</a> love letter to shoofly pie—a celebration of the molasses-rich treat and the Amish and Pennsylvania Dutch communities whose baking traditions made it a regional favorite.</p><p>I Love Shoofly is a public guide to the pie itself—what it is, where it comes from, and where to find a slice. Browse the map, compare wet- and dry-bottom styles, explore the history, or suggest a place that should be included.</p><div class="about-actions"><a class="button button-primary" href="/i-love-shoofly/where-to-find-shoofly-pie/">Find a slice</a><a class="text-link" href="/i-love-shoofly/what-is-shoofly-pie/">What is shoofly? ↗</a></div></div>
+      <div><p class="lead">This is an <a href="https://groups.etown.edu/amishstudies/frequently-asked-questions/" target="_blank" rel="noreferrer" title="Amish term for a non-Amish person">Englisher&rsquo;s</a> love letter to shoofly pie—a celebration of the molasses-rich treat and the Amish and Pennsylvania Dutch communities whose baking traditions made it a regional favorite.</p><p>I Love Shoofly is a public guide to the pie itself—what it is, where it comes from, and where to find a slice. Browse the map, compare wet- and dry-bottom styles, explore the history, or suggest a place that should be included.</p><div class="about-actions"><a class="button button-primary" href="/where-to-find-shoofly-pie/">Find a slice</a><a class="text-link" href="/what-is-shoofly-pie/">What is shoofly? ↗</a></div></div>
       <aside><span class="big-number">${spots.length}</span><span>shoofly spots found<br>and counting</span></aside>
     </div></section>`,
   what: () => `
@@ -74,7 +74,7 @@ const routes = {
       <div class="map-view-toggle" role="group" aria-label="Choose map or list view"><button type="button" class="active" data-map-view="map" aria-pressed="true">Map</button><button type="button" data-map-view="list" aria-pressed="false">List</button></div>
       <div class="map-shell" data-mobile-view="map"><div id="map" aria-label="Interactive map of shoofly pie locations"></div><aside class="spot-panel" aria-live="polite"><div class="spot-card" id="spot-card"></div><div class="spot-list" id="spot-list" aria-label="Shoofly pie locations"></div></aside></div>
       <p class="map-verification-note"><span aria-hidden="true">✓</span> Every spot on this map has been verified as having served shoofly pie at some point—either through an in-person visit or thorough online research—though current availability may vary.</p>
-      <aside class="map-submit-cta"><div><strong>Don&rsquo;t see a shoofly spot?</strong><span>Know a bakery, market, or roadside stand we missed?</span></div><a class="button button-primary" href="/i-love-shoofly/#/contact">Let us know →</a></aside>
+      <aside class="map-submit-cta"><div><strong>Don&rsquo;t see a shoofly spot?</strong><span>Know a bakery, market, or roadside stand we missed?</span></div><a class="button button-primary" href="/#/contact">Let us know →</a></aside>
     </section>`,
   history: () => `
     <section class="page history-page">
