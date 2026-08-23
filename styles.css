@@ -43,7 +43,7 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .about-grid .lead { color: var(--brown); font-size: 22px; }
 .about-actions { margin-top: 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 .about-grid aside { padding-left: 28px; border-left: 1px solid rgba(50,26,18,.35); font-size: 11px; font-weight: 900; letter-spacing: .09em; line-height: 1.5; text-transform: uppercase; }
-.big-number { display: block; font-family: Georgia, serif; font-size: 82px; line-height: .9; letter-spacing: -.06em; }
+.big-number { display: block; margin-bottom: 12px; font-family: Georgia, serif; font-size: 82px; line-height: 1; letter-spacing: -.06em; }
 
 .what-page { width: min(100%,1600px); margin: 0 auto; padding: clamp(42px,5vw,76px) clamp(22px,5vw,76px); background: var(--paper); }
 .what-intro { width: min(100%,1240px); margin: 0 auto clamp(38px,5vw,66px); }
