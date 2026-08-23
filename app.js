@@ -57,7 +57,7 @@ const routes = {
   contact: () => `
     <section class="page contact-page">
       <div class="contact-copy"><p class="section-kicker">Help the trail grow</p><h1 class="route-title">Don&rsquo;t see a<br>shoofly spot?</h1><p>Send the name and town. Add a map or website link if one exists. Every tip gets reviewed before it earns a pie pin.</p><div class="contact-pie" aria-hidden="true">🥧</div></div>
-      <form id="suggest-form"><div class="field-row"><label>Spot name<input name="name" required maxlength="120" placeholder="Bakery or market"></label><label>Town / state<input name="town" required maxlength="100" placeholder="Lancaster, PA"></label></div><label>Google Maps or website link <span>(optional)</span><input name="url" type="url" maxlength="500" placeholder="https://…"></label><label>What should we know?<textarea name="note" maxlength="1000" rows="3" placeholder="Wet or dry bottom? Seasonal? Which counter sells it?"></textarea></label><div class="form-footer"><button class="button button-primary" type="submit">Suggest this spot</button><p>Opens a prefilled GitHub suggestion.</p></div></form>
+      <form id="suggest-form"><div class="field-row"><label>Spot name<input name="name" required maxlength="120" placeholder="Bakery or market"></label><label>Town / state<input name="town" required maxlength="100" placeholder="Lancaster, PA"></label></div><label>Google Maps or website link <span>(optional)</span><input name="url" type="url" maxlength="500" placeholder="https://…"></label><label>What should we know?<textarea name="note" maxlength="1000" rows="3" placeholder="Wet or dry bottom? Seasonal? Which counter sells it?"></textarea></label><div class="form-footer"><button class="button button-primary" type="submit">Suggest this spot</button><p id="form-status" role="status" aria-live="polite">Your tip is sent privately by email.</p></div></form>
     </section>`
 };
 
@@ -106,15 +106,35 @@ function updateSpot() {
 }
 
 function initContact() {
-  document.querySelector("#suggest-form").addEventListener("submit", event => {
+  const form = document.querySelector("#suggest-form");
+  const button = form.querySelector('button[type="submit"]');
+  const status = document.querySelector("#form-status");
+
+  form.addEventListener("submit", async event => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const name = data.get("name").trim();
-    const town = data.get("town").trim();
-    const url = data.get("url").trim();
-    const note = data.get("note").trim();
-    const body = [`**Spot name:** ${name}`,`**Town / state:** ${town}`,`**Map or website:** ${url || "Not provided"}`,"", "**What to know:**", note || "No additional notes."].join("\n");
-    window.open(`https://github.com/isabelanyc/i-love-shoofly/issues/new?title=${encodeURIComponent(`Shoofly spot: ${name}`)}&body=${encodeURIComponent(body)}`,"_blank","noopener,noreferrer");
+    button.disabled = true;
+    button.textContent = "Sending…";
+    status.textContent = "Sending your tip privately…";
+    status.className = "is-sending";
+
+    try {
+      const response = await fetch("https://formspree.io/f/mwpqwejb", {
+        method: "POST",
+        body: new FormData(form),
+        headers: {Accept: "application/json"}
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
+      form.reset();
+      status.textContent = "Thank you! Your shoofly tip is on its way.";
+      status.className = "is-success";
+    } catch (error) {
+      status.textContent = "That tip didn’t send. Please try again in a moment.";
+      status.className = "is-error";
+    } finally {
+      button.disabled = false;
+      button.textContent = "Suggest this spot";
+    }
   });
 }
 
