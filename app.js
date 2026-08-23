@@ -89,7 +89,7 @@ function initMap() {
   const bounds = [];
   spots.forEach((spot,index) => {
     const icon = L.divIcon({className:`pie-map-marker${index === selected ? " is-selected" : ""}`,html:'<span><i aria-hidden="true">🥧</i></span>',iconSize:[38,46],iconAnchor:[19,46]});
-    const marker = L.marker([spot.lat,spot.lon],{icon,title:`${spot.name}, ${spot.town}`}).bindTooltip(`<strong>${spot.name}</strong><br>${spot.town}`,{direction:"top",offset:[0,-18]}).on("click",()=>selectSpot(index)).addTo(map);
+    const marker = L.marker([spot.lat,spot.lon],{icon,title:`${spot.name}, ${spot.town}`}).bindTooltip(`<strong>${spot.name}</strong><br>${spot.town}`,{direction:"top",offset:[0,-52]}).on("click",()=>selectSpot(index)).addTo(map);
     markers.push(marker); bounds.push([spot.lat,spot.lon]);
   });
   map.fitBounds(bounds,{padding:[36,36],maxZoom:9});
