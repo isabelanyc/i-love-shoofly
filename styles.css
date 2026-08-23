@@ -49,11 +49,11 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .what-intro { width: min(100%,1240px); margin: 0 auto clamp(38px,5vw,66px); }
 .what-intro .section-kicker { margin-bottom: 10px; }
 .what-intro .route-title { font-size: clamp(48px,6vw,92px); line-height: .9; }
-.what-intro > p { width: 100%; max-width: 1120px; margin: 22px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(18px,1.7vw,23px); line-height: 1.55; }
+.what-intro > p { width: 100%; margin: 22px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(18px,1.7vw,23px); line-height: 1.55; }
 .comparison-intro { width: min(100%,1240px); margin: 0 auto 26px; padding-top: 28px; border-top: 1px solid var(--line); }
 .comparison-intro .section-kicker { margin-bottom: 9px; }
 .comparison-intro h2 { margin-bottom: 14px; font-size: clamp(34px,4vw,56px); line-height: .95; }
-.comparison-intro > p { width: 100%; max-width: 1120px; margin: 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(16px,1.4vw,20px); line-height: 1.55; }
+.comparison-intro > p { width: 100%; margin: 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(16px,1.4vw,20px); line-height: 1.55; }
 .pie-comparison { position: relative; width: min(100%,1240px); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px,2.5vw,34px); }
 .comparison-card { min-width: 0; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--molasses); background: var(--cream); }
 .comparison-card figure { min-width: 0; margin: 0; display: flex; flex-direction: column; overflow: hidden; border-top: 4px solid var(--butter); background: var(--molasses); }
