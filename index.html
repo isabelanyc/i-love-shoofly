@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A public field guide to shoofly pie bakeries, markets, and roadside stands." />
+    <meta property="og:title" content="Shoofly Pie Trail" />
+    <meta property="og:description" content="Find a slice. Share the love." />
+    <meta property="og:image" content="assets/shoofly-pie.jpg" />
+    <title>Shoofly Pie Trail</title>
+    <link rel="preconnect" href="https://tile.openstreetmap.org" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-frame">
+      <header class="site-header">
+        <a class="brand" href="#/" aria-label="Shoofly Pie Trail home"><span class="brand-pie" aria-hidden="true">🥧</span><span>Shoofly Pie Trail</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="#/about" data-route="about">About</a>
+          <a href="#/map" data-route="map">Map</a>
+          <a href="#/history" data-route="history">History</a>
+          <a href="#/contact" data-route="contact">Contact</a>
+        </nav>
+      </header>
+      <main id="app" tabindex="-1"></main>
+      <footer class="compact-footer">
+        <span>🥧 Shoofly Pie Trail</span>
+        <span>Made to spread the love of shoofly.</span>
+        <span>Hosted with GitHub Pages.</span>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="app.js"></script>
+  </body>
+</html>
