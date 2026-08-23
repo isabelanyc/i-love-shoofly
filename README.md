@@ -4,7 +4,7 @@ A public field guide to shoofly pie bakeries, markets, and roadside stands.
 
 The site is published as a GitHub Project Site at:
 
-https://isabelanyc.github.io/i-love-shoofly/
+https://iloveshoofly.com/
 
 ## About this edition
 
