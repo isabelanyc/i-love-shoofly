@@ -68,7 +68,7 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .comparison-copy dl div { padding: 10px 0; display: grid; grid-template-columns: 90px 1fr; gap: 12px; border-bottom: 1px solid var(--line); }
 .comparison-copy dt { color: var(--rust); font-size: 9px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
 .comparison-copy dd { margin: 0; font-family: Georgia, serif; font-size: 14px; }
-.preference-block { margin-top: clamp(52px,7vw,96px); display: grid; grid-template-columns: .88fr 1.12fr; gap: 0; align-items: stretch; overflow: hidden; color: #fff5df; background: var(--molasses); }
+.preference-block { margin-top: clamp(52px,7vw,96px); display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0; align-items: stretch; overflow: hidden; color: #fff5df; background: var(--molasses); }
 .preference-copy { padding: clamp(30px,4vw,62px); display: flex; flex-direction: column; justify-content: center; }
 .preference-copy .section-kicker { margin-bottom: 12px; color: var(--butter); }
 .preference-copy h2 { margin-bottom: 20px; color: #fff5df; font-size: clamp(34px,4vw,60px); line-height: .96; }
@@ -78,8 +78,8 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .preference-summary { max-width: 600px; margin: 0; color: #dccbb5; font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
 .preference-source { max-width: 600px; margin: 20px 0 0; padding-top: 17px; color: #dccbb5; border-top: 1px solid rgba(255,250,240,.2); font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
 .preference-source a { color: var(--butter); font-weight: 900; text-underline-offset: 3px; }
-.preference-block figure { min-width: 0; margin: 0; display: flex; flex-direction: column; overflow: hidden; background: #fff; }
-.preference-block img { width: 100%; height: clamp(540px,50vw,720px); display: block; object-fit: contain; object-position: left center; }
+.preference-block figure { min-width: 0; min-height: 0; height: 100%; margin: 0; display: flex; flex-direction: column; overflow: hidden; background: #fff; }
+.preference-block img { flex: 1 1 0; width: 100%; min-height: 0; height: auto; display: block; object-fit: contain; object-position: center; }
 .preference-block figcaption { padding: 8px 12px; color: #e6d7c3; background: var(--molasses); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
 .preference-block figcaption a { color: #fff5df; font-weight: 900; text-underline-offset: 3px; }
 
@@ -174,7 +174,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--ochre); box-shad
   nav a { font-size: 9px; }
   .about-grid, .timeline, .field-row, .pie-comparison, .preference-block, .history-notes { grid-template-columns: 1fr; }
   .comparison-card img { height: clamp(180px,54vw,240px); }
-  .preference-block img { height: min(135vw,620px); }
+  .preference-block img { flex: none; height: min(135vw,620px); }
   .timeline .timeline-today { grid-column: auto; }
   .about-grid aside { grid-column: 1; }
   #map { height: 500px; }
