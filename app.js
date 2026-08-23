@@ -60,8 +60,8 @@ const routes = {
     </section>`,
   contact: () => `
     <section class="page contact-page">
-      <div class="contact-copy"><p class="section-kicker">Help the trail grow</p><h1 class="route-title">Don&rsquo;t see a<br>shoofly spot?</h1><p>Send the name and town. Add a map or website link if one exists. Every tip gets reviewed before it earns a pie pin.</p><div class="contact-pie" aria-hidden="true">🥧</div></div>
-      <form id="suggest-form"><div class="field-row"><label>Spot name<input name="name" required maxlength="120" placeholder="Bakery or market"></label><label>Town / state<input name="town" required maxlength="100" placeholder="Lancaster, PA"></label></div><label>Google Maps or website link <span>(optional)</span><input name="url" type="url" maxlength="500" placeholder="https://…"></label><label>What should we know?<textarea name="note" maxlength="1000" rows="3" placeholder="Wet or dry bottom? Seasonal? Which counter sells it?"></textarea></label><div class="form-footer"><button class="button button-primary" type="submit">Suggest this spot</button><p id="form-status" role="status" aria-live="polite">Your tip is sent privately by email.</p></div></form>
+      <div class="contact-copy"><p class="section-kicker">Get in touch</p><h1 class="route-title">Let&rsquo;s talk<br>shoofly.</h1><p>Know a spot that belongs on the map? Have a correction, a shoofly story, a question, or an idea for working together? Send a note—every kind of shoofly message is welcome.</p><div class="contact-pie" aria-hidden="true">🥧</div></div>
+      <form id="suggest-form"><label>What&rsquo;s this about?<select name="reason" required><option value="" selected disabled>Choose a reason</option><option>Suggest a shoofly spot</option><option>Update or correct a listing</option><option>Share a shoofly story</option><option>Press or partnership</option><option>Something else</option></select></label><div class="field-row"><label>Your name<input name="sender_name" required maxlength="120" autocomplete="name" placeholder="Your name"></label><label>Your email <span>(optional, if you&rsquo;d like a reply)</span><input name="email" type="email" maxlength="200" autocomplete="email" placeholder="you@example.com"></label></div><div class="field-row"><label>Spot or organization <span>(if applicable)</span><input name="spot_name" maxlength="120" placeholder="Bakery, market, or group"></label><label>Town / state <span>(optional)</span><input name="town" maxlength="100" placeholder="Lancaster, PA"></label></div><label>Google Maps or website link <span>(optional)</span><input name="url" type="url" maxlength="500" placeholder="https://…"></label><label>Your message<textarea name="message" required maxlength="1500" rows="4" placeholder="Tell us what&rsquo;s on your mind…"></textarea></label><div class="form-footer"><button class="button button-primary" type="submit">Send message</button><p id="form-status" role="status" aria-live="polite">Your message is sent privately by email.</p></div></form>
     </section>`
 };
 
@@ -130,14 +130,14 @@ function initContact() {
 
       if (!response.ok) throw new Error("Submission failed");
       form.reset();
-      status.textContent = "Thank you! Your shoofly tip is on its way.";
+      status.textContent = "Thank you! Your message is on its way.";
       status.className = "is-success";
     } catch (error) {
       status.textContent = "That tip didn’t send. Please try again in a moment.";
       status.className = "is-error";
     } finally {
       button.disabled = false;
-      button.textContent = "Suggest this spot";
+      button.textContent = "Send message";
     }
   });
 }
