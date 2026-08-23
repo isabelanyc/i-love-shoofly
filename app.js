@@ -107,7 +107,7 @@ function selectSpot(index) {
 
 function updateSpot() {
   const spot = spots[selected];
-  document.querySelector("#spot-card").innerHTML = `<p class="spot-count">Spot ${selected+1} of ${spots.length}</p><div class="spot-icon" aria-hidden="true">🥧</div><h3>${spot.name}</h3><p class="spot-town">${spot.town}</p><p class="spot-address">${spot.address}</p><a class="button button-primary full" href="${spot.url}" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>`;
+  document.querySelector("#spot-card").innerHTML = `<div class="spot-icon" aria-hidden="true">🥧</div><h3>${spot.name}</h3><p class="spot-town">${spot.town}</p><p class="spot-address">${spot.address}</p><a class="button button-primary full" href="${spot.url}" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>`;
 }
 
 function initContact() {
