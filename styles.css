@@ -49,11 +49,11 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .what-intro { width: min(100%,1240px); margin: 0 auto clamp(38px,5vw,66px); }
 .what-intro .section-kicker { margin-bottom: 10px; }
 .what-intro .route-title { font-size: clamp(48px,6vw,92px); line-height: .9; }
-.what-intro > p { width: 100%; max-width: 900px; margin: 22px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(18px,1.7vw,23px); line-height: 1.55; }
+.what-intro > p { width: 100%; max-width: 1120px; margin: 22px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(18px,1.7vw,23px); line-height: 1.55; }
 .comparison-intro { width: min(100%,1240px); margin: 0 auto 26px; padding-top: 28px; border-top: 1px solid var(--line); }
 .comparison-intro .section-kicker { margin-bottom: 9px; }
 .comparison-intro h2 { margin-bottom: 14px; font-size: clamp(34px,4vw,56px); line-height: .95; }
-.comparison-intro > p { max-width: 900px; margin: 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(16px,1.4vw,20px); line-height: 1.55; }
+.comparison-intro > p { width: 100%; max-width: 1120px; margin: 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(16px,1.4vw,20px); line-height: 1.55; }
 .pie-comparison { position: relative; width: min(100%,1240px); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px,2.5vw,34px); }
 .comparison-card { min-width: 0; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--molasses); background: var(--cream); }
 .comparison-card figure { min-width: 0; margin: 0; display: flex; flex-direction: column; overflow: hidden; border-top: 4px solid var(--butter); background: var(--molasses); }
@@ -68,7 +68,7 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .comparison-copy dl div { padding: 10px 0; display: grid; grid-template-columns: 90px 1fr; gap: 12px; border-bottom: 1px solid var(--line); }
 .comparison-copy dt { color: var(--rust); font-size: 9px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
 .comparison-copy dd { margin: 0; font-family: Georgia, serif; font-size: 14px; }
-.preference-block { margin-top: clamp(52px,7vw,96px); display: grid; grid-template-columns: .88fr 1.12fr; align-items: stretch; overflow: hidden; color: #fff5df; background: var(--molasses); }
+.preference-block { margin-top: clamp(52px,7vw,96px); display: grid; grid-template-columns: .88fr 1.12fr; gap: 0; align-items: stretch; overflow: hidden; color: #fff5df; background: var(--molasses); }
 .preference-copy { padding: clamp(30px,4vw,62px); display: flex; flex-direction: column; justify-content: center; }
 .preference-copy .section-kicker { margin-bottom: 12px; color: var(--butter); }
 .preference-copy h2 { margin-bottom: 20px; color: #fff5df; font-size: clamp(34px,4vw,60px); line-height: .96; }
@@ -78,8 +78,8 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .preference-summary { max-width: 600px; margin: 0; color: #dccbb5; font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
 .preference-source { max-width: 600px; margin: 20px 0 0; padding-top: 17px; color: #dccbb5; border-top: 1px solid rgba(255,250,240,.2); font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
 .preference-source a { color: var(--butter); font-weight: 900; text-underline-offset: 3px; }
-.preference-block figure { min-width: 0; margin: 0; display: flex; flex-direction: column; background: #fff; }
-.preference-block img { width: 100%; height: clamp(520px,48vw,680px); display: block; object-fit: contain; }
+.preference-block figure { min-width: 0; margin: 0; display: flex; flex-direction: column; overflow: hidden; background: #fff; }
+.preference-block img { width: 100%; height: clamp(540px,50vw,720px); display: block; object-fit: contain; object-position: left center; }
 .preference-block figcaption { padding: 8px 12px; color: #e6d7c3; background: var(--molasses); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
 .preference-block figcaption a { color: #fff5df; font-weight: 900; text-underline-offset: 3px; }
 
