@@ -13,7 +13,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--molasses); background: var(--cream); font-family: "Trebuchet MS", "Avenir Next", Avenir, sans-serif; }
 a { color: inherit; }
-button, input, textarea { font: inherit; }
+button, input, textarea, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 .site-frame { min-height: 100vh; display: flex; flex-direction: column; }
 
@@ -138,9 +138,10 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 form { padding: clamp(24px,3vw,42px); background: var(--paper); border: 1px solid var(--molasses); box-shadow: 9px 9px 0 var(--molasses); }
 form label { display: block; margin-bottom: 18px; font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
 form label span { color: var(--brown); font-weight: 500; letter-spacing: 0; text-transform: none; }
-input, textarea { width: 100%; margin-top: 8px; padding: 13px 0; border: 0; border-bottom: 1px solid var(--molasses); border-radius: 0; color: var(--molasses); background: transparent; font-family: Georgia, serif; font-size: 17px; outline: 0; }
+input, textarea, select { width: 100%; margin-top: 8px; padding: 13px 0; border: 0; border-bottom: 1px solid var(--molasses); border-radius: 0; color: var(--molasses); background: transparent; font-family: Georgia, serif; font-size: 17px; outline: 0; }
+select { cursor: pointer; }
 textarea { padding: 14px; border: 1px solid var(--line); resize: vertical; }
-input:focus, textarea:focus { border-color: var(--ochre); box-shadow: 0 2px 0 var(--ochre); }
+input:focus, textarea:focus, select:focus { border-color: var(--ochre); box-shadow: 0 2px 0 var(--ochre); }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .form-footer { margin-top: 28px; display: flex; align-items: center; gap: 20px; }
 .form-footer p { margin: 0; color: var(--brown); font-size: 12px; line-height: 1.4; }
