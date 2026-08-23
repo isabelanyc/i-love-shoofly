@@ -46,13 +46,16 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .big-number { display: block; font-family: Georgia, serif; font-size: 82px; line-height: .9; letter-spacing: -.06em; }
 
 .what-page { padding: clamp(34px,4vw,58px) clamp(22px,5vw,76px); background: var(--paper); }
-.what-intro { margin-bottom: 28px; display: grid; grid-template-columns: 1fr .8fr; gap: clamp(30px,7vw,110px); align-items: end; }
+.what-intro { margin-bottom: 28px; }
 .what-intro .section-kicker { margin-bottom: 10px; }
 .what-intro .route-title { font-size: clamp(46px,5.6vw,80px); }
-.what-intro > p { max-width: 590px; margin: 0 0 4px; color: var(--brown); font-family: Georgia, serif; font-size: clamp(17px,1.6vw,21px); line-height: 1.55; }
+.what-intro > p { max-width: 760px; margin: 18px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(17px,1.6vw,21px); line-height: 1.55; }
 .pie-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px,2.5vw,34px); }
 .comparison-card { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(240px,.92fr); overflow: hidden; border: 1px solid var(--molasses); background: var(--cream); }
-.comparison-card img { width: 100%; height: 100%; min-height: 310px; object-fit: cover; }
+.comparison-card figure { min-width: 0; margin: 0; display: flex; flex-direction: column; background: var(--molasses); }
+.comparison-card img { width: 100%; min-height: 310px; flex: 1 1 auto; display: block; object-fit: cover; }
+.comparison-card figcaption { padding: 7px 10px; color: #e6d7c3; background: var(--molasses); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
+.comparison-card figcaption a { color: #fff5df; font-weight: 900; text-underline-offset: 3px; }
 .comparison-copy { padding: clamp(20px,2.4vw,34px); }
 .comparison-number { margin-bottom: 8px; color: var(--rust); font-size: 10px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .comparison-copy h2 { margin-bottom: 12px; font-size: clamp(30px,3vw,46px); line-height: .95; }
@@ -151,7 +154,7 @@ input:focus, textarea:focus { border-color: var(--ochre); box-shadow: 0 2px 0 va
   .brand-pie { width: 30px; height: 30px; font-size: 16px; }
   nav { width: 100%; gap: 12px 16px; padding: 4px 0 6px; flex-wrap: wrap; }
   nav a { font-size: 9px; }
-  .about-grid, .timeline, .field-row, .what-intro, .pie-comparison, .history-notes { grid-template-columns: 1fr; }
+  .about-grid, .timeline, .field-row, .pie-comparison, .history-notes { grid-template-columns: 1fr; }
   .timeline .timeline-today { grid-column: auto; }
   .about-grid aside { grid-column: 1; }
   #map { height: 500px; }
