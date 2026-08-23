@@ -46,10 +46,10 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .big-number { display: block; font-family: Georgia, serif; font-size: 82px; line-height: .9; letter-spacing: -.06em; }
 
 .what-page { width: min(100%,1600px); margin: 0 auto; padding: clamp(42px,5vw,76px) clamp(22px,5vw,76px); background: var(--paper); }
-.what-intro { width: 100%; margin-bottom: clamp(38px,5vw,66px); }
+.what-intro { width: min(100%,1240px); margin: 0 auto clamp(38px,5vw,66px); }
 .what-intro .section-kicker { margin-bottom: 10px; }
 .what-intro .route-title { font-size: clamp(48px,6vw,92px); line-height: .9; }
-.what-intro > p { width: 100%; margin: 22px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(18px,1.7vw,23px); line-height: 1.55; }
+.what-intro > p { width: 100%; max-width: 900px; margin: 22px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: clamp(18px,1.7vw,23px); line-height: 1.55; }
 .comparison-intro { width: min(100%,1240px); margin: 0 auto 26px; padding-top: 28px; border-top: 1px solid var(--line); }
 .comparison-intro .section-kicker { margin-bottom: 9px; }
 .comparison-intro h2 { margin-bottom: 14px; font-size: clamp(34px,4vw,56px); line-height: .95; }
@@ -76,7 +76,7 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .survey-stat strong { color: var(--butter); font-family: Georgia, serif; font-size: clamp(44px,5vw,72px); line-height: .8; letter-spacing: -.05em; }
 .survey-stat span { max-width: 90px; color: #fff5df; font-size: 10px; font-weight: 900; letter-spacing: .1em; line-height: 1.35; text-transform: uppercase; }
 .preference-summary { max-width: 600px; margin: 0; color: #dccbb5; font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
-.preference-source { max-width: 600px; margin: 20px 0 0; padding-top: 17px; color: #cbb9a3; border-top: 1px solid rgba(255,250,240,.2); font-size: 11px; line-height: 1.55; }
+.preference-source { max-width: 600px; margin: 20px 0 0; padding-top: 17px; color: #dccbb5; border-top: 1px solid rgba(255,250,240,.2); font-family: Georgia, serif; font-size: clamp(16px,1.5vw,20px); line-height: 1.6; }
 .preference-source a { color: var(--butter); font-weight: 900; text-underline-offset: 3px; }
 .preference-block figure { min-width: 0; margin: 0; display: flex; flex-direction: column; background: #fff; }
 .preference-block img { width: 100%; height: clamp(520px,48vw,680px); display: block; object-fit: contain; }
