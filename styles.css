@@ -107,6 +107,8 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .spot-list button:hover, .spot-list button.active { background: #f0dca8; }
 .spot-list span { font-family: Georgia, serif; font-size: 13px; font-weight: 700; }
 .spot-list small { color: var(--brown); font-size: 10px; letter-spacing: .07em; text-transform: uppercase; }
+.map-verification-note { max-width: 940px; margin: 14px 0 0; color: var(--brown); font-family: Georgia, serif; font-size: 12px; line-height: 1.5; }
+.map-verification-note span { margin-right: 6px; color: var(--rust); font-family: "Trebuchet MS", sans-serif; font-weight: 900; }
 .map-submit-cta { margin-top: 16px; padding: 13px 16px 13px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border: 1px solid var(--molasses); background: #f0dca8; }
 .map-submit-cta div { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .map-submit-cta strong { font-family: Georgia, serif; font-size: 19px; }
