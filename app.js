@@ -45,6 +45,7 @@ const routes = {
   map: () => `
     <section class="page map-page">
       <div class="map-shell"><div id="map" aria-label="Interactive map of shoofly pie locations"></div><aside class="spot-panel" aria-live="polite"><div class="spot-card" id="spot-card"></div><div class="spot-list" id="spot-list" aria-label="Shoofly pie locations"></div></aside></div>
+      <p class="map-verification-note"><span aria-hidden="true">✓</span> Every spot on this map has been verified as having served shoofly pie at some point—either through an in-person visit or thorough online research—though current availability may vary.</p>
       <aside class="map-submit-cta"><div><strong>Don&rsquo;t see a shoofly spot?</strong><span>Know a bakery, market, or roadside stand we missed?</span></div><a class="button button-primary" href="#/contact">Let us know →</a></aside>
     </section>`,
   history: () => `
