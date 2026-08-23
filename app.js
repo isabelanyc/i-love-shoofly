@@ -71,7 +71,8 @@ const routes = {
     </section>`,
   map: () => `
     <section class="page map-page">
-      <div class="map-shell"><div id="map" aria-label="Interactive map of shoofly pie locations"></div><aside class="spot-panel" aria-live="polite"><div class="spot-card" id="spot-card"></div><div class="spot-list" id="spot-list" aria-label="Shoofly pie locations"></div></aside></div>
+      <div class="map-view-toggle" role="group" aria-label="Choose map or list view"><button type="button" class="active" data-map-view="map" aria-pressed="true">Map</button><button type="button" data-map-view="list" aria-pressed="false">List</button></div>
+      <div class="map-shell" data-mobile-view="map"><div id="map" aria-label="Interactive map of shoofly pie locations"></div><aside class="spot-panel" aria-live="polite"><div class="spot-card" id="spot-card"></div><div class="spot-list" id="spot-list" aria-label="Shoofly pie locations"></div></aside></div>
       <p class="map-verification-note"><span aria-hidden="true">✓</span> Every spot on this map has been verified as having served shoofly pie at some point—either through an in-person visit or thorough online research—though current availability may vary.</p>
       <aside class="map-submit-cta"><div><strong>Don&rsquo;t see a shoofly spot?</strong><span>Know a bakery, market, or roadside stand we missed?</span></div><a class="button button-primary" href="#/contact">Let us know →</a></aside>
     </section>`,
@@ -111,6 +112,8 @@ function render() {
 }
 
 function initMap() {
+  const mapShell = document.querySelector(".map-shell");
+  const viewButtons = document.querySelectorAll("[data-map-view]");
   map = L.map("map", {zoomControl:true, scrollWheelZoom:true});
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom:19, keepBuffer:1, updateWhenIdle:true, updateWhenZooming:false}).addTo(map);
   const bounds = [];
@@ -122,6 +125,16 @@ function initMap() {
   map.fitBounds(bounds,{padding:[36,36],maxZoom:9});
   document.querySelector("#spot-list").innerHTML = spots.map((spot,index)=>`<button type="button" data-index="${index}" class="${index === selected ? "active" : ""}"><span>${spot.name}</span><small>${spot.town}</small></button>`).join("");
   document.querySelector("#spot-list").addEventListener("click",event=>{const button=event.target.closest("button[data-index]"); if(button) selectSpot(Number(button.dataset.index));});
+  viewButtons.forEach(button => button.addEventListener("click", () => {
+    const view = button.dataset.mapView;
+    mapShell.dataset.mobileView = view;
+    viewButtons.forEach(option => {
+      const isActive = option === button;
+      option.classList.toggle("active", isActive);
+      option.setAttribute("aria-pressed", String(isActive));
+    });
+    if (view === "map") requestAnimationFrame(() => map.invalidateSize());
+  }));
   updateSpot();
 }
 

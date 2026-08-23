@@ -84,6 +84,7 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em
 .preference-block figcaption a { color: #fff5df; font-weight: 900; text-underline-offset: 3px; }
 
 .map-page { padding: 22px clamp(20px,4vw,58px); background: var(--paper); }
+.map-view-toggle { display: none; }
 .map-shell { height: clamp(400px,calc(100vh - 260px),540px); min-height: 400px; display: grid; grid-template-columns: minmax(0,1fr) 310px; overflow: hidden; border: 1px solid var(--molasses); background: #e8ddbd; box-shadow: 10px 10px 0 rgba(197,122,22,.28); }
 #map { min-height: 0; height: 100%; background: #e8dfbd; }
 #map .leaflet-tile-pane { filter: saturate(.72) brightness(1.06) contrast(.82) sepia(.05); }
@@ -180,6 +181,13 @@ input:focus, textarea:focus, select:focus { border-color: var(--ochre); box-shad
   .timeline .timeline-wide { grid-column: auto; }
   .about-grid aside { grid-column: 1; }
   #map { height: 500px; }
+  .map-view-toggle { margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--molasses); background: var(--paper); }
+  .map-view-toggle button { min-height: 42px; border: 0; color: var(--molasses); background: transparent; font: 900 10px/1 "Trebuchet MS", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .map-view-toggle button + button { border-left: 1px solid var(--molasses); }
+  .map-view-toggle button.active { color: var(--paper); background: var(--molasses); }
+  .map-shell[data-mobile-view="map"] .spot-panel { display: none; }
+  .map-shell[data-mobile-view="list"] #map { display: none; }
+  .map-shell[data-mobile-view="list"] { min-height: 0; }
   .spot-panel { grid-template-columns: 1fr; }
   .spot-card { border-right: 0; border-bottom: 1px solid var(--line); }
   .spot-list { max-height: 300px; }
