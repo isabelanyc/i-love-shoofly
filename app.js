@@ -28,7 +28,7 @@ let markers = [];
 const routes = {
   about: () => `
     <section class="page about-page"><div class="about-grid">
-      <div><p class="section-kicker">About this site</p><h1 class="route-title">I love<br>shoofly.</h1></div>
+      <div><h1 class="route-title">I love<br>shoofly.</h1></div>
       <div><p class="lead">This is an <a href="https://groups.etown.edu/amishstudies/frequently-asked-questions/" target="_blank" rel="noreferrer" title="Amish term for a non-Amish person">Englisher&rsquo;s</a> love letter to shoofly pie—a celebration of the molasses-rich treat and the Amish and Pennsylvania Dutch communities whose baking traditions made it a regional favorite.</p><p>I Love Shoofly is a public guide to the pie itself—what it is, where it comes from, and where to find a slice. Browse the map, compare wet- and dry-bottom styles, explore the history, or suggest a place that should be included.</p><div class="about-actions"><a class="button button-primary" href="#/map">Find a slice</a><a class="text-link" href="#/what">What is shoofly? ↗</a></div></div>
       <aside><span class="big-number">${spots.length}</span><span>shoofly spots found<br>and counting</span></aside>
     </div></section>`,
