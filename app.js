@@ -29,7 +29,7 @@ const routes = {
   about: () => `
     <section class="page about-page"><div class="about-grid">
       <div><p class="section-kicker">About this site</p><h1 class="route-title">I love<br>shoofly.</h1></div>
-      <div><p class="lead">This is an Englisher&rsquo;s love letter to shoofly pie—a celebration of the molasses-rich treat and the Amish and Pennsylvania Dutch communities whose baking traditions made it a regional favorite.</p><p>What began as a personal Google Maps list became a way to highlight this distinctly sweet treat and the bakeries, markets, and roadside stands that proudly make and sell it. Use the map to find a slice, plan a detour, and share the places still missing.</p><div class="about-actions"><a class="button button-primary" href="#/map">Find a slice</a><a class="text-link" href="#/what">What is shoofly? ↗</a></div></div>
+      <div><p class="lead">This is an Englisher&rsquo;s love letter to shoofly pie—a celebration of the molasses-rich treat and the Amish and Pennsylvania Dutch communities whose baking traditions made it a regional favorite.</p><p>I Love Shoofly is a public guide to the pie itself—what it is, where it comes from, and where to find a slice. It celebrates the bakeries, markets, roadside stands, and communities connected to the tradition while inviting fellow shoofly fans to share tips, stories, and corrections.</p><div class="about-actions"><a class="button button-primary" href="#/map">Find a slice</a><a class="text-link" href="#/what">What is shoofly? ↗</a></div></div>
       <aside><span class="big-number">${spots.length}</span><span>shoofly spots found<br>and counting</span></aside>
     </div></section>`,
   what: () => `
