@@ -181,17 +181,20 @@ input:focus, textarea:focus, select:focus { border-color: var(--ochre); box-shad
   .preference-block img { flex: none; height: min(135vw,620px); }
   .timeline .timeline-wide { grid-column: auto; }
   .about-grid aside { grid-column: 1; }
-  #map { height: 500px; }
+  .map-shell { box-shadow: 5px 5px 0 rgba(197,122,22,.22); }
+  #map { height: clamp(340px,62vh,440px); }
   .map-view-toggle { margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--molasses); background: var(--paper); }
-  .map-view-toggle button { min-height: 42px; border: 0; color: var(--molasses); background: transparent; font: 900 10px/1 "Trebuchet MS", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .map-view-toggle button { min-height: 48px; border: 0; color: var(--molasses); background: transparent; font: 900 11px/1 "Trebuchet MS", sans-serif; letter-spacing: .1em; text-transform: uppercase; touch-action: manipulation; }
   .map-view-toggle button + button { border-left: 1px solid var(--molasses); }
   .map-view-toggle button.active { color: var(--paper); background: var(--molasses); }
+  .map-shell[data-mobile-view="map"] { min-height: 340px; }
   .map-shell[data-mobile-view="map"] .spot-panel { display: none; }
   .map-shell[data-mobile-view="list"] #map { display: none; }
-  .map-shell[data-mobile-view="list"] { min-height: 0; }
-  .spot-panel { grid-template-columns: 1fr; }
+  .map-shell[data-mobile-view="list"] { min-height: 0; overflow: visible; }
+  .spot-panel { display: block; grid-template-columns: 1fr; overflow: visible; }
   .spot-card { border-right: 0; border-bottom: 1px solid var(--line); }
-  .spot-list { max-height: 300px; }
+  .spot-list { max-height: none; overflow: visible; }
+  .spot-list button { min-height: 58px; padding: 12px 16px; }
   .map-submit-cta, .form-footer { align-items: flex-start; flex-direction: column; }
   .history-page { align-items: start; }
 }
