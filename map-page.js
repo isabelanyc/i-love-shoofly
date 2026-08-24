@@ -41,7 +41,7 @@ function parseCsv(text) {
 }
 
 async function loadSpots() {
-  const response = await fetch("/i-love-shoofly/spots.csv", {cache: "no-cache"});
+  const response = await fetch("/spots.csv", {cache: "no-cache"});
   if (!response.ok) throw new Error("Could not load spots.csv");
   const [headers, ...rows] = parseCsv(await response.text());
   spots = rows
