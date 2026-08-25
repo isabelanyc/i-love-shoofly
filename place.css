@@ -1,0 +1,24 @@
+.place-page { max-width: 1180px; margin: 0 auto; }
+.place-breadcrumb { margin-bottom: clamp(32px, 6vw, 72px); display: flex; gap: 9px; color: var(--brown); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.place-breadcrumb a { color: var(--rust); text-underline-offset: 3px; }
+.place-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(280px, .55fr); gap: clamp(48px, 9vw, 128px); align-items: center; }
+.place-intro .route-title { max-width: 800px; margin: 14px 0 20px; font-size: clamp(48px, 8vw, 112px); overflow-wrap: anywhere; }
+.place-town { color: var(--rust); font-family: Georgia, serif; font-size: clamp(22px, 3vw, 34px); font-style: italic; }
+.place-details { padding: clamp(26px, 4vw, 46px); background: var(--molasses); color: var(--cream); box-shadow: 12px 12px 0 var(--gold); }
+.place-pie { margin-bottom: 34px; font-size: 58px; }
+.place-label { margin-bottom: 10px; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+.place-details address { margin-bottom: 28px; color: #fff8e7; font-family: Georgia, serif; font-size: 20px; font-style: normal; line-height: 1.45; }
+.place-details .button { background: var(--gold); color: var(--molasses); }
+.place-note { margin-top: clamp(70px, 12vw, 150px); padding: clamp(28px, 5vw, 58px) 0; display: grid; grid-template-columns: minmax(240px, .8fr) minmax(300px, 1.2fr); gap: clamp(32px, 8vw, 100px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.place-note h2 { margin-top: 10px; font-family: Georgia, serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.04; }
+.place-note > p { max-width: 640px; font-size: clamp(17px, 2vw, 21px); line-height: 1.65; }
+.place-actions { padding-top: 30px; display: flex; justify-content: space-between; gap: 24px; font-size: 13px; font-weight: 900; }
+.place-actions a { color: var(--rust); text-underline-offset: 4px; }
+
+@media (max-width: 760px) {
+  .place-layout, .place-note { grid-template-columns: 1fr; }
+  .place-layout { gap: 38px; }
+  .place-intro .route-title { font-size: clamp(44px, 15vw, 72px); }
+  .place-details { box-shadow: 8px 8px 0 var(--gold); }
+  .place-actions { flex-direction: column; }
+}

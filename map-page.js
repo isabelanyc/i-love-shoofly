@@ -40,6 +40,14 @@ function parseCsv(text) {
   return rows;
 }
 
+function spotSlug(spot) {
+  return `${spot.name}-${spot.town.split(",")[0]}`
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 async function loadSpots() {
   const response = await fetch("/spots.csv", {cache: "no-cache"});
   if (!response.ok) throw new Error("Could not load spots.csv");
@@ -123,7 +131,10 @@ function updateSpot() {
     <h3>${spot.name}</h3>
     <p class="spot-town">${spot.town}</p>
     <p class="spot-address">${spot.address}</p>
-    <a class="button button-primary full" href="${spot.url}" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>`;
+    <div class="spot-card-actions">
+      <a class="button button-primary full" href="/places/${spotSlug(spot)}/">View stop details</a>
+      <a class="spot-map-link" href="${spot.url}" target="_blank" rel="noreferrer">Google Maps ↗</a>
+    </div>`;
 }
 
 

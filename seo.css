@@ -112,6 +112,16 @@
   line-height: 1.45;
 }
 
+.location-grid small {
+  margin-top: auto;
+  padding-top: 14px;
+  color: var(--rust);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
 .location-grid span {
   color: var(--rust);
   font-weight: 900;
@@ -210,4 +220,3 @@
     justify-content: space-between;
   }
 }
-
