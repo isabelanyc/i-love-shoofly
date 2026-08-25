@@ -68,8 +68,6 @@ function markerIcon(isSelected) {
 }
 
 function initMap() {
-  const mapShell = document.querySelector(".map-shell");
-  const viewButtons = document.querySelectorAll("[data-map-view]");
   map = L.map("map", {zoomControl: true, scrollWheelZoom: true});
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -87,7 +85,11 @@ function initMap() {
     }).bindTooltip(`<strong>${spot.name}</strong><br>${spot.town}`, {
       direction: "top",
       offset: [0, -52]
-    }).on("click", () => selectSpot(index)).addTo(map);
+    }).bindPopup(`
+      <strong>${spot.name}</strong>
+      <span>${spot.town}</span>
+      <a href="/places/${spotSlug(spot)}/">View shoofly pie stop →</a>
+    `).on("click", () => selectSpot(index)).addTo(map);
     markers.push(marker);
     bounds.push([spot.lat, spot.lon]);
   });
@@ -102,17 +104,6 @@ function initMap() {
     const button = event.target.closest("button[data-index]");
     if (button) selectSpot(Number(button.dataset.index));
   });
-
-  viewButtons.forEach(button => button.addEventListener("click", () => {
-    const view = button.dataset.mapView;
-    mapShell.dataset.mobileView = view;
-    viewButtons.forEach(option => {
-      const isActive = option === button;
-      option.classList.toggle("active", isActive);
-      option.setAttribute("aria-pressed", String(isActive));
-    });
-    if (view === "map") requestAnimationFrame(() => map.invalidateSize());
-  }));
 
   updateSpot();
 }
