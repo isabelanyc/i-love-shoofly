@@ -77,6 +77,22 @@ for (const spot of spots) {
     hasMap: spot.url,
     subjectOf: {"@type": "WebPage", "@id": canonical}
   };
+  if (spot.phone) schema.telephone = spot.phone;
+  if (spot.email) schema.email = spot.email;
+  if (spot.website) schema.sameAs = [spot.website];
+
+  const contactRows = [
+    `<div><dt>Address</dt><dd><address>${address}<br>${town}</address></dd></div>`,
+    spot.phone ? `<div><dt>Phone</dt><dd><a href="tel:${spot.phone.replace(/[^\d+]/g, "")}">${escapeHtml(spot.phone)}</a></dd></div>` : "",
+    spot.email ? `<div><dt>Email</dt><dd><a href="mailto:${escapeHtml(spot.email)}">${escapeHtml(spot.email)}</a></dd></div>` : "",
+    spot.hours ? `<div><dt>Published hours</dt><dd>${escapeHtml(spot.hours)}</dd></div>` : ""
+  ].filter(Boolean).join("\n              ");
+
+  const detailLinks = [
+    spot.website ? `<a href="${escapeHtml(spot.website)}" target="_blank" rel="noreferrer">Official website ↗</a>` : "",
+    `<a href="${escapeHtml(spot.url)}" target="_blank" rel="noreferrer">Google Maps ↗</a>`,
+    spot.details_source && spot.details_source !== spot.website ? `<a href="${escapeHtml(spot.details_source)}" target="_blank" rel="noreferrer">Contact &amp; hours source ↗</a>` : ""
+  ].filter(Boolean).join("\n                ");
 
   const html = `<!doctype html>
 <html lang="en">
@@ -121,14 +137,17 @@ for (const spot of spots) {
             </header>
             <aside class="place-details" aria-label="Location details">
               <div class="place-pie" aria-hidden="true">🥧</div>
-              <p class="place-label">Address</p>
-              <address>${address}<br>${town}</address>
-              <a class="button button-primary full" href="${escapeHtml(spot.url)}" target="_blank" rel="noreferrer">Open in Google Maps ↗</a>
+              <dl class="place-contact">
+                ${contactRows}
+              </dl>
+              <div class="place-detail-links">
+                ${detailLinks}
+              </div>
             </aside>
           </div>
           <section class="place-note">
             <div><p class="section-kicker">Before you go</p><h2>Looking for shoofly pie here?</h2></div>
-            <p>${name} has been verified as having served shoofly pie at some point through an in-person visit or online research. Selection and hours can change, so check with the location before making a special trip.</p>
+            <p>${name} has been verified as having served shoofly pie at some point through an in-person visit or online research. Selection, seasonal schedules, and holiday hours can change, so call or check the linked source before making a special trip.</p>
           </section>
           <nav class="place-actions" aria-label="More shoofly resources">
             <a href="../../where-to-find-shoofly-pie/">← Browse all ${spots.length} stops</a>

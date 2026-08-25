@@ -6,9 +6,13 @@
 .place-town { color: var(--rust); font-family: Georgia, serif; font-size: clamp(22px, 3vw, 34px); font-style: italic; }
 .place-details { padding: clamp(26px, 4vw, 46px); background: var(--molasses); color: var(--cream); box-shadow: 12px 12px 0 var(--gold); }
 .place-pie { margin-bottom: 34px; font-size: 58px; }
-.place-label { margin-bottom: 10px; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-.place-details address { margin-bottom: 28px; color: #fff8e7; font-family: Georgia, serif; font-size: 20px; font-style: normal; line-height: 1.45; }
-.place-details .button { background: var(--gold); color: var(--molasses); }
+.place-contact { display: grid; gap: 20px; }
+.place-contact div { padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,.18); }
+.place-contact dt { margin-bottom: 7px; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+.place-contact dd, .place-contact address { color: #fff8e7; font-family: Georgia, serif; font-size: 18px; font-style: normal; line-height: 1.45; overflow-wrap: anywhere; }
+.place-contact a { color: #fff8e7; text-underline-offset: 3px; }
+.place-detail-links { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.place-detail-links a { color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .05em; text-underline-offset: 3px; }
 .place-note { margin-top: clamp(70px, 12vw, 150px); padding: clamp(28px, 5vw, 58px) 0; display: grid; grid-template-columns: minmax(240px, .8fr) minmax(300px, 1.2fr); gap: clamp(32px, 8vw, 100px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .place-note h2 { margin-top: 10px; font-family: Georgia, serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.04; }
 .place-note > p { max-width: 640px; font-size: clamp(17px, 2vw, 21px); line-height: 1.65; }
