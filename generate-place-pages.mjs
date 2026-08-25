@@ -61,7 +61,7 @@ for (const spot of spots) {
   const town = escapeHtml(spot.town);
   const address = escapeHtml(spot.address);
   const canonical = `${siteUrl}/places/${spot.slug}/`;
-  const description = `${spot.name} in ${spot.town} is one of the verified stops in the I Love Shoofly directory. Find the address, map, and availability note.`;
+  const description = `Find shoofly pie at ${spot.name} in ${spot.town}. See the address, phone number, published hours, map, and availability note.`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "Place",
@@ -120,7 +120,7 @@ for (const spot of spots) {
         <a class="brand" href="../../" aria-label="I Love Shoofly home"><span class="brand-pie" aria-hidden="true">🥧</span><span>I Love Shoofly</span></a>
         <nav aria-label="Primary navigation">
           <a href="../../">About</a>
-          <a href="../../what-is-shoofly-pie/">What is Shoofly?</a>
+          <a href="../../what-is-shoofly-pie/">What is Shoofly Pie?</a>
           <a href="../../history/">History</a>
           <a href="../../where-to-find-shoofly-pie/" aria-current="page">Map</a>
           <a href="../../#/contact">Contact</a>
@@ -131,7 +131,7 @@ for (const spot of spots) {
           <p class="place-breadcrumb"><a href="../../where-to-find-shoofly-pie/">Shoofly pie directory</a><span aria-hidden="true">/</span>${town}</p>
           <div class="place-layout">
             <header class="place-intro">
-              <p class="section-kicker">Verified shoofly stop</p>
+              <p class="section-kicker">Verified shoofly pie stop</p>
               <h1 class="route-title">${name}</h1>
               <p class="place-town">${town}</p>
             </header>
@@ -149,13 +149,13 @@ for (const spot of spots) {
             <div><p class="section-kicker">Before you go</p><h2>Looking for shoofly pie here?</h2></div>
             <p>${name} has been verified as having served shoofly pie at some point through an in-person visit or online research. Selection, seasonal schedules, and holiday hours can change, so call or check the linked source before making a special trip.</p>
           </section>
-          <nav class="place-actions" aria-label="More shoofly resources">
-            <a href="../../where-to-find-shoofly-pie/">← Browse all ${spots.length} stops</a>
+          <nav class="place-actions" aria-label="More shoofly pie resources">
+            <a href="../../where-to-find-shoofly-pie/">← Browse all ${spots.length} shoofly pie stops</a>
             <a href="../../what-is-shoofly-pie/">Wet bottom or dry bottom? →</a>
           </nav>
         </article>
       </main>
-      <footer class="compact-footer"><span>🥧 I Love Shoofly</span><span>Made to spread the love of shoofly.</span><span>Hosted with GitHub Pages.</span></footer>
+      <footer class="compact-footer"><span>🥧 I Love Shoofly</span><span>Made to spread the love of shoofly pie.</span><span>Hosted with GitHub Pages.</span></footer>
     </div>
   </body>
 </html>
