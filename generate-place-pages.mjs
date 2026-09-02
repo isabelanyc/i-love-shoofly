@@ -181,6 +181,9 @@ const itemListSchema = {
 };
 const directoryItems = spots.map(spot => `              <li><a href="../places/${spot.slug}/"><strong>${escapeHtml(spot.name)}</strong><span>${escapeHtml(spot.town)}</span><address>${escapeHtml(spot.address)}</address><small>View stop details →</small></a></li>`).join("\n");
 directoryHtml = directoryHtml
+  .replace(/directory of \d+ bakeries/, `directory of ${spots.length} bakeries`)
+  .replace(/Where to Find Shoofly Pie: \d+ Stops/g, `Where to Find Shoofly Pie: ${spots.length} Stops`)
+  .replace(/<h2 id="all-locations-title">\d+ places/, `<h2 id="all-locations-title">${spots.length} places`)
   .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">\n      ${JSON.stringify(itemListSchema).replace(/</g, "\\u003c")}\n    </script>`)
   .replace(/<ol class="location-grid">[\s\S]*?<\/ol>/, `<ol class="location-grid">\n${directoryItems}\n            </ol>`);
 fs.writeFileSync(directoryPath, directoryHtml);
